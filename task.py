@@ -46,3 +46,19 @@ class OnlineSalesRegisterCollector:
         else:
             self.__name_items.remove(name)
             self.__number_items -=1
+
+    def check_amount(self):
+        total = []
+        total_price = 0
+
+        for item in self.name_items:
+            total.append(self.__item_price[item])
+        
+        for e in total:
+            total_price += e
+        
+        if len(total) > 10:
+            total_price = total_price - ((total_price / 100) * 10)
+            print(total_price)
+        else:
+            print(total_price)
