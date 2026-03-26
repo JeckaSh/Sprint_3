@@ -78,9 +78,9 @@ class OnlineSalesRegisterCollector:
 
         if len(total) > 10:
             nds = nds - ((nds / 100) * 10)
-            print(nds)
+            return nds
         else:
-            print(nds)
+            return nds
 
     def ten_percent_tax_calculation(self):
         ten_percent_tax = []
@@ -97,6 +97,9 @@ class OnlineSalesRegisterCollector:
 
         if len(total) > 10:
             nds = nds - ((nds / 100) * 10)
-            print(nds)
+            return nds
         else:
-            print(nds)
+            return nds
+
+    def total_tax(self):
+        return self.ten_percent_tax_calculation() + self.twenty_percent_tax_calculation()
